@@ -7,15 +7,7 @@ const LIMIT = 15;
 
 type FetchCardsResponse = {
   data: {
-    data: {
-      id: string;
-      name: string;
-      images: { small: string; large: string };
-      number: string;
-      supertype: string;
-      subtypes: string[];
-      rarity: string;
-    }[];
+    data: QueryCardsData;
   };
 };
 
