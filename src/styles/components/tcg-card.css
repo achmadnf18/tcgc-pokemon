@@ -1,15 +1,39 @@
 .tcg-card {
+  --radius: 4.55% / 3.5%;
+  --glow: #69d1e9;
   z-index: 1;
-  transition-duration: 0.5s;
-  transition-property: z-index;
+  box-shadow: 0px 10px 20px -5px black;
+  border-radius: var(--radius);
+  outline: none;
+  transition: z-index 0.5s, box-shadow 0.4s ease, outline 0.2s ease;
 }
 
 .tcg-card:has(> .card.active) {
-  z-index: 20 !important;
+  z-index: 100 !important;
+}
+
+.tcg-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow), 0 0 30px 0px var(--glow);
 }
 
 .tcg-card-container {
   @apply grid grid-cols-[repeat(auto-fit,_minmax(9.25rem,_1fr))] gap-3.5 lg:grid-cols-[repeat(auto-fit,_minmax(12.25rem,_1fr))];
+}
+
+.tcg-card-container.card-comparison {
+  @apply grid grid-cols-[repeat(auto-fit,_minmax(9.25rem,_1fr))] gap-3.5 lg:grid-cols-[repeat(auto-fit,_minmax(9.25rem,_1fr))];
+}
+
+.tcg-card__modal-content {
+  --radius: 4.55% / 3.5%;
+  @apply flex w-full flex-wrap justify-center gap-3.5;
+}
+
+.tcg-card__detail {
+  border-radius: var(--radius);
+  box-shadow: 0px 10px 20px -5px black;
+  @apply relative w-full max-w-[30rem] overflow-y-hidden bg-white bg-white/70 p-[1rem] backdrop-blur dark:bg-dark-light/70 lg:max-h-[27rem];
 }
 
 img {

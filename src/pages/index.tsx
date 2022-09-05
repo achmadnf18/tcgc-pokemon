@@ -86,7 +86,7 @@ export default function PokemonListPage() {
       {isPreviousData && <div className="relative -top-4 text-center">⏳ Loading...</div>}
       <div className={clsx('tcg-card-container relative', isPreviousData && 'opacity-60')}>
         {cards?.map((card, idx) => (
-          <TcgCard key={`${card.id}-${idx}`} {...card} />
+          <TcgCard key={`${card.id}-${idx}`} card={card} />
         ))}
         {!isFetching && cards?.length === 0 && 'No result'}
         {isFetchingNextPage && <TcgCardsShimmer />}

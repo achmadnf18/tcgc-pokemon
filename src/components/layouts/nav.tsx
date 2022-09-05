@@ -2,7 +2,12 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { HiOutlineInformationCircle, HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
+import {
+  HiOutlineColorSwatch,
+  HiOutlineInformationCircle,
+  HiOutlineMenu,
+  HiOutlineX,
+} from 'react-icons/hi';
 import { TbPlayCard } from 'react-icons/tb';
 import { useToggle } from 'react-power-ups';
 
@@ -20,6 +25,12 @@ export default function Nav() {
           <Link href="/" className="nav-link">
             <TbPlayCard className="text-2xl" />
             TCG Pokémons
+          </Link>
+        </li>
+        <li className="order-2 flex-1">
+          <Link href="/compare" className="nav-link">
+            <HiOutlineColorSwatch className="text-2xl" />
+            Compare
           </Link>
         </li>
         <li className="order-2 flex-1 md:hidden">

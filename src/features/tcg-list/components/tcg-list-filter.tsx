@@ -56,13 +56,13 @@ export default function TcgListFilter({ filter, setFilter }: Props) {
 
   const onChangeFilter = ({ key, value }: { key: string; value: string | undefined }) => {
     let param = key;
-    value = value ? `${param}:"${value}"` : undefined;
+    let filterValue = value ? `${param}:"${value}"` : undefined;
 
-    if (key === 'name' && value) value = `${param}:"${value}*"`;
+    if (key === 'name' && filterValue) filterValue = `${param}:"${value}*"`;
     if (key === 'set') param = 'set.id';
     if (value === '0') value = undefined;
 
-    setFilter((prev) => ({ ...prev, [key]: value }));
+    setFilter((prev) => ({ ...prev, [key]: filterValue }));
     replace(getNewRoute({ [key]: value }));
   };
 

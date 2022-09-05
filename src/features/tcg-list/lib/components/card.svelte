@@ -39,7 +39,7 @@
   let springScale = spring(1, springD);
 
   const interact = (e) => {
-    if (!active || ($activeCard && $activeCard !== thisCard)) return;
+    if ($activeCard && $activeCard !== thisCard) return;
 
     interacting = true;
 
@@ -303,7 +303,7 @@
     <div
       class="card__rotator"
       bind:this={rotator}
-      on:pointerup={activate}
+      pointerup={activate}
       on:pointermove={interact}
       on:mouseout={interactEnd}
       on:blur={deactivate}

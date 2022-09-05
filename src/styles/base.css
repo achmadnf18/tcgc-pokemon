@@ -16,6 +16,7 @@
     --elm-undefined: #e5e7eb;
     --elm-bug: #9dc130;
     --elm-dark: #5f606d;
+    --elm-darkness: #5f606d;
     --elm-dragon: #0773c7;
     --elm-electric: #edd53f;
     --elm-fairy: #ef97e6;
@@ -26,6 +27,8 @@
     --elm-grass: #5dbe62;
     --elm-ground: #d78555;
     --elm-ice: #98d8d8;
+    --elm-lightning: #edd53f;
+    --elm-metal: #b8b8d0;
     --elm-normal: #9a9da1;
     --elm-poison: #b563ce;
     --elm-psychic: #f85888;
@@ -36,6 +39,7 @@
       --elm-undefined: #25303f;
       --elm-bug: #5b712d;
       --elm-dark: #3b404b;
+      --elm-darkness: #3b404b;
       --elm-dragon: #0f4979;
       --elm-electric: #837b34;
       --elm-fairy: #845c88;
@@ -46,6 +50,8 @@
       --elm-grass: #3a6f46;
       --elm-ground: #78533f;
       --elm-ice: #587c81;
+      --elm-lightning: #837b34;
+      --elm-metal: #686c7d;
       --elm-normal: #595f66;
       --elm-poison: #67417c;
       --elm-psychic: #883c59;
@@ -64,6 +70,14 @@
 
   .h1 {
     @apply text-3xl font-bold;
+  }
+
+  .h2 {
+    @apply text-2xl font-bold;
+  }
+
+  .h3 {
+    @apply text-xl font-bold;
   }
 
   #__next {
