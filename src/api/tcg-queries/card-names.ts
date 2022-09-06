@@ -13,6 +13,8 @@ type FetchCardsResponse = {
 
 const fetchCardByName = async (ctx: QueryFunctionContext<QueryCardsKey>) => {
   const { name } = ctx.queryKey[1];
+  if (!name || name === '') return [];
+
   const res = await tcgFetcher.get<unknown, FetchCardsResponse>('/v2/cards', {
     params: { q: `name:"${name}*"`, page: ctx.pageParam || 1, pageSize: LIMIT },
   });

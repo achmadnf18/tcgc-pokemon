@@ -9,6 +9,7 @@ type Props = {
   classContent?: string;
   classPanel?: string;
   onClose: () => void;
+  afterLoad?: () => void;
   footer?: JSX.Element | ReactNode;
   children?: ReactNode;
 };
@@ -19,6 +20,7 @@ export default function Modal({
   classPanel,
   classContent,
   onClose,
+  afterLoad,
   footer,
   children,
 }: Props) {
@@ -26,7 +28,8 @@ export default function Modal({
 
   useEffect(() => {
     setIsOpen(visible);
-  }, [visible]);
+    if (visible) setTimeout(() => afterLoad?.(), 100);
+  }, [visible, afterLoad]);
 
   function closeModal() {
     setIsOpen(false);

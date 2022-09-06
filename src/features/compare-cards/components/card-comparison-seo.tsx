@@ -1,12 +1,10 @@
 import { NextSeo } from 'next-seo';
 
-import { MAX_CARD_TO_COMPARE } from '@/constants';
-
 export default function CardComparisonSeo() {
   return (
     <NextSeo
       title="Compare TCG Pokémons"
-      description={`Compare TCG Pokémons easily! Select up to ${MAX_CARD_TO_COMPARE} cards to compare. Tell your friend that your TCG Pokémons is better.`}
+      description="Compare TCG Pokémons easily! Select up to UNLIMITED cards to compare. Tell your friend that your TCG Pokémons is better."
       openGraph={{
         images: [
           {

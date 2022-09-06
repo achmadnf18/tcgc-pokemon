@@ -91,7 +91,8 @@ export default function PokemonListPage() {
         {!isFetching && cards?.length === 0 && 'No result'}
         {isFetchingNextPage && <TcgCardsShimmer />}
 
-        {/* Add 2 empty div to enforce 3 columns layout even when just displaying 1 card */}
+        {/* Add 3 empty div to enforce 4 columns layout even when just displaying 1 card */}
+        <div />
         <div />
         <div />
       </div>

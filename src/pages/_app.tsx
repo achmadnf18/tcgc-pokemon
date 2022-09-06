@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 import Layout from '@/components/layouts/layout';
 import getQueryClient from '@/config/react-query';
+import CompareCardsProvider from '@/features/compare-cards/components/compare-cards-provider';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(getQueryClient);
@@ -21,7 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
           description={process.env.NEXT_PUBLIC_SEO_DEFAULT_DESCRIPTION || 'Pokémon TCG Center'}
         />
         <Layout>
-          <Component {...pageProps} />
+          <CompareCardsProvider>
+            <Component {...pageProps} />
+          </CompareCardsProvider>
         </Layout>
         <ReactQueryDevtools />
       </Hydrate>

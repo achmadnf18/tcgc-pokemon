@@ -2,7 +2,7 @@ export default function TcgCardsShimmer() {
   return (
     <>
       {[...Array(12).keys()].map((key) => (
-        <div key={key} className="tcg-card h-[168px]">
+        <div key={key} className="tcg-card min-h-[19rem]">
           <div className="shimmer mt-1.5 h-5 w-16" />
           <div className="pokeball-flat animate-pulse opacity-30 invert dark:invert-0" />
         </div>

@@ -11,8 +11,8 @@ type Props = {
 export default function StatsAndAbility({ card }: Props) {
   const cardType = card.types[0].toLowerCase();
   return (
-    <div className="lg:h-[85%] lg:overflow-y-auto">
-      <h2 className="h2 pb-3">☀️Series {card.set.series}</h2>
+    <div className="tcg-card__stats-ability">
+      <h2 className="h3 lg:h2 pb-3">☀️Series {card.set.series}</h2>
       <h3 className="h3 pb-3">📜Stats</h3>
       <div className="px-3 pb-3 text-sm">
         <div className="pb-1 font-semibold">Type</div>

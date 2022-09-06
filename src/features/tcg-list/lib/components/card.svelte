@@ -102,6 +102,7 @@
 
   const activate = (e) => {
     const isTouch = e.pointerType === 'touch';
+    console.log(e.pointerType);
     if (!isTouch && $activeCard && $activeCard === thisCard) {
       // deactive if already active
       $activeCard = undefined;
@@ -173,10 +174,10 @@
 
   $: {
     if ($activeCard && $activeCard === thisCard) {
-      popover();
+      // popover();
       active = true;
     } else {
-      retreat();
+      // retreat();
       active = false;
     }
   }
@@ -276,15 +277,15 @@
           springBackground.set({ x: 10, y: 0 });
           setTimeout(() => {
             interactEnd(0);
-          }, 3000);
-        }, 3000);
-        document.documentElement.scrollTop = 0;
-      }, 2000);
+          }, 2000);
+        }, 2000);
+        // document.documentElement.scrollTop = 0;
+      }, 1000);
     }
   });
 </script>
 
-<svelte:window on:scroll={reposition} />
+<!-- <svelte:window on:scroll={reposition} /> -->
 
 <div
   class="card"
@@ -303,7 +304,7 @@
     <div
       class="card__rotator"
       bind:this={rotator}
-      pointerup={activate}
+      on:pointerup={activate}
       on:pointermove={interact}
       on:mouseout={interactEnd}
       on:blur={deactivate}
@@ -384,13 +385,13 @@
     transition: box-shadow 0.4s ease, outline 0.2s ease;
   }
 
-  .card.active .card__rotator {
+  /* .card.active .card__rotator {
     box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow), 0 0 30px 0px var(--glow);
   }
 
   .card__rotator:focus {
     box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow), 0 0 30px 0px var(--glow);
-  }
+  } */
 
   .card.active .card__rotator:focus {
     box-shadow: 0px 10px 30px 3px black;
